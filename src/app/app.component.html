@@ -1,0 +1,17 @@
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav mode="over" [(opened)]="menuSideNav">
+    <app-menu></app-menu>
+  </mat-sidenav>
+
+  <div class="grid-layout foreground background">
+    <div class="header">
+      <app-header (toggleMenu)="onToggleMenu($event)"></app-header>
+    </div>
+    <div class="body background">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="footer">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</mat-sidenav-container>

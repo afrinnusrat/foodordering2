@@ -1,0 +1,10 @@
+  
+  .slider-grid-container{
+    padding: 20px;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(265px, auto));
+    grid-template-rows: repeat(auto-fill, minmax(150px, auto));
+    justify-items: center;
+    align-items: center;
+  }
