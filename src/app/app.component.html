@@ -2,7 +2,9 @@
   <mat-sidenav mode="over" [(opened)]="menuSideNav">
     <app-menu></app-menu>
   </mat-sidenav>
-
+  <mat-sidenav mode="over" [(opened)]="loginSideNav" position="end" (closed)="loginSideNavCloseEvent()">
+    <app-login></app-login>
+  </mat-sidenav>
   <div class="grid-layout foreground background">
     <div class="header">
       <app-header (toggleMenu)="onToggleMenu($event)"></app-header>

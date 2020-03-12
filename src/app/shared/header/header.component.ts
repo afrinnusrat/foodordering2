@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme.service';
+import { HelperService } from 'src/app/services/helper.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   selectedTheme: any;
   darkTheme:boolean = true;
   @Output() toggleMenu = new EventEmitter<boolean>();
-  constructor(private themeService: ThemeService) { 
+  constructor(private themeService: ThemeService, private helperService: HelperService) { 
     this.themeService.darkTheme.subscribe(res => {
       this.darkTheme = res;
       this.setSelectedTheme();
@@ -22,6 +23,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openLoginSideNav(){
+    this.helperService.loginSideNav.next(true);
+  }
 
   setSelectedTheme() {
     if (this.darkTheme) {

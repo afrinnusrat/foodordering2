@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   signupEnable (){
-   this.helperService.enableAccount.next('signup');
+   //this.helperService.enableAccount.next('signup');
   }
   closeLoginNav(){
-    this.helperService.endSideNav.next(false);
+    this.helperService.loginSideNav.next(false);
   }
 }

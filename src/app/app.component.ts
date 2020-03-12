@@ -1,6 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { ThemeService } from './services/theme.service';
+import { HelperService } from './services/helper.service';
 
 @Component({
   selector: 'app-root',
@@ -11,15 +12,19 @@ export class AppComponent {
   title = 'Food Ordering App 2';
   darkThemeEnable: boolean;
   themeColor: string = 'red';
+  loginSideNav = false;
   menuSideNav = false;
   @HostBinding('class') componentCssClass;
-  constructor(public overlayContainer: OverlayContainer, private themeService: ThemeService) {
+  constructor(public overlayContainer: OverlayContainer, private themeService: ThemeService, private helperService: HelperService) {
     this.overlayContainer.getContainerElement().classList.add(this.themeColor + '-light-theme');
     this.componentCssClass = this.themeColor + '-light-theme';
     this.themeService.darkTheme.subscribe(res => {
       this.darkThemeEnable = res;
       this.setTheme();
     });
+    this.helperService.loginSideNav.subscribe(res => {
+      this.loginSideNav = res;
+    })
   }
 
 
@@ -43,7 +48,10 @@ export class AppComponent {
       }
     }
   }
-  onToggleMenu(menuToggle: boolean){
+  onToggleMenu(menuToggle: boolean) {
     this.menuSideNav = !this.menuSideNav;
+  }
+  loginSideNavCloseEvent() {
+    this.helperService.loginSideNav.next(false);
   }
 }
