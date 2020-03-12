@@ -6,11 +6,15 @@
   height: 60px;
   transition: 0.5s;
 }
+
 @media only screen and (max-width: 800px) {
   .menu-icon {
     display: block;
   }
   .menu{
+    display: none;
+  }
+  .web-view{
     display: none;
   }
 }

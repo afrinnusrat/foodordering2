@@ -16,8 +16,8 @@
         <div class="big-vertical-height"></div>
         <div class="big-vertical-height"></div>
         <ng-container *ngIf="!searchModel">
-            <mat-chip-list aria-label="Fish selection" style="max-width: 800px;">
-                <mat-chip *ngFor="let suggest of suggestList" (click)="suggestClick(suggest)" class="pointer" style="margin: 20px 40px;">{{suggest}}</mat-chip>
+            <mat-chip-list aria-label="Fish selection" style="max-width: 800px;" class="flex-middle">
+                <mat-chip *ngFor="let suggest of suggestList" (click)="suggestClick(suggest)" class="pointer suggestChips" >{{suggest}}</mat-chip>
             </mat-chip-list>
         </ng-container>
     </div>

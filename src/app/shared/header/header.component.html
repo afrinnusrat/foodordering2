@@ -19,17 +19,15 @@
         </button>
     </div>
     <div class="flex-item-center">
-        <button mat-icon-button [routerLink]="['/search']"  routerLinkActive="active" >
+        <button mat-icon-button [routerLink]="['/search']" routerLinkActive="active">
             <mat-icon>search</mat-icon>
         </button>
-        <span class="small-gap"></span>
-        <button mat-stroked-button (click)="openLoginSideNav()">
-            <div class="flex-item-center">
+        <div class="flex-item-center web-view">
+            <span class="small-gap"></span>
+            <button mat-stroked-button (click)="openLoginSideNav()">
                 <mat-icon>person</mat-icon>
-                <div class="very-small-gap"></div>
-                LOGIN
-            </div>
-        </button>
+            </button>
+        </div>
         <span class="small-gap"></span>
         <button mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon>format_color_fill</mat-icon>
